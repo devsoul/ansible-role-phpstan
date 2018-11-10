@@ -7,9 +7,9 @@
   register: json_response
 
 - name: Install PHPStan.
-  become: yes
+  become: true
   get_url:
     url: https://github.com/phpstan/phpstan/releases/download/{{ json_response.json.tag_name }}/phpstan.phar
     dest: /usr/local/bin/phpstan
     mode: 0755
-    force: yes
+    force: true
